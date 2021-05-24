@@ -17,10 +17,10 @@ private:
     struct Node{
         T value;
         bool empty=false;
-        Node* left;
-        Node* right;
+        Node* left=nullptr;
+        Node* right=nullptr;
         Node(){}
-        Node(bool isEmpty):empty(isEmpty){}
+        Node(int indicator,bool isEmpty):empty(isEmpty){}
         Node(T val): value(val){}
         ~Node(){
             if(left!=NULL){
@@ -187,10 +187,7 @@ public:
     return *this;
 }
      BinaryTree& add_right(const T& exists ,const T& add){
-    if(root->value == exists && typeid(T) == typeid(int)){
-         cout<<"HERE ";
-        
-    }
+
     bool wasFound=false;
    
     iterator it = iterator{root,1};
@@ -239,7 +236,7 @@ public:
 public:
     friend ostream& operator<<(ostream& os,BinaryTree& tree) {
     vector<vector<Node*>> treeLayers;
-    Node* emptySpace =new Node(true);
+    Node* emptySpace =new Node(1,true);
     queue<Node*> Q;
     Q.push(tree.root);
     int counterForQ = 1;
