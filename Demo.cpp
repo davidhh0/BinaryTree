@@ -21,7 +21,7 @@ int main() {
   .add_left(9, 4)      // Now 4 is the left child of 9
   .add_right(9, 5)     // Now 5 is the right child of 9
   .add_right(1, 3)     // Now 3 is the right child of 1
-  .add_left(1, 2);     // Now 2 is the left child of 1, instead of 9 (the children of 9 remain in place)
+  .add_left(1, 2).add_right(3,6).add_right(6,7).add_right(5,8).add_left(3,9).add_left(9,10);     // Now 2 is the left child of 1, instead of 9 (the children of 9 remain in place)
 
   cout<<tree_of_ints;
 
